@@ -1,3 +1,5 @@
+// let $count =0;
+
 $("#name").keyup(function(){
     // $('span.error-keyup-2').remove();
     $('span.name-err').remove()
@@ -21,10 +23,26 @@ $("#email").keyup(function(){
     }
     if($patten.test($val1)){
         $('span.name-err').remove()
+        // $count++
         
     }
    
     
+})
+
+$("#con-password").change(function(){
+    let $val1 = $('#password').val();
+    let $con_passwd = $(this).val();
+    if($val1 === $con_passwd){
+        $('span.pass-match').remove()
+        $('span.pass-err').remove()
+        $(this).after('<span class="pass-match">Password Match</span>')
+        // $count ++
+    }if($val1 !== $con_passwd){
+        $('span.pass-match').remove()
+        $('span.pass-err').remove()
+        $(this).after('<span class="pass-err">Password not Match</span>')
+    }
 })
 
 
@@ -45,6 +63,7 @@ $("#password").keyup(function(){
         $('span.low').hide()
 
         $(this).after('<span class="strong">strong</span>')
+        // $count++
      
     }
     // if(!$patten1.test($val1)){
@@ -58,8 +77,6 @@ $("#password").keyup(function(){
         $('span.low').remove()
         
         $(this).after('<span class="midium">midium</span>')
-
-
     }
    if($low.test($val1)){
     $('span.midium').remove()
@@ -69,4 +86,8 @@ $("#password").keyup(function(){
     $(this).after('<span class="low">low</span>')
    }
    
+})
+
+$('#submit').click(function(){
+
 })

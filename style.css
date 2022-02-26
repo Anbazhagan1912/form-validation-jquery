@@ -42,3 +42,9 @@
       color: red; }
 
 
+.pass-match{
+    color: green;
+}
+.pass-err{
+    color: red;
+}
