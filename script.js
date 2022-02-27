@@ -88,6 +88,3 @@ $("#password").keyup(function(){
    
 })
 
-$('#submit').click(function(){
-
-})
